@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Scholarships from './pages/Scholarships';
+import ScholarshipDetail from './pages/ScholarshipDetail';
 
 const App: React.FC = () => {
     return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
                         <Route path="/" element={<Blog />} />
                         <Route path="/blog/:slug" element={<BlogDetail />} />
                         <Route path="/scholarships" element={<Scholarships />} />
+                        <Route path="/scholarships/:slug" element={<ScholarshipDetail />} />
                     </Routes>
                 </main>
                 <Footer />
