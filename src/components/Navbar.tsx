@@ -3,8 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
     const location = useLocation();
-    const isBlog = location.pathname === '/' || location.pathname.startsWith('/blog/');
-    const isBlogsNews = location.pathname === '/blogs-news';
+    const isBlogsNews = location.pathname === '/' || location.pathname.startsWith('/blog/') || location.pathname.startsWith('/news/');
     const catScrollRef = useRef<HTMLDivElement>(null);
 
     const scrollCat = (direction: 'left' | 'right') => {
@@ -27,16 +26,10 @@ const Navbar: React.FC = () => {
                         <a className="text-gray-600 hover:text-primary font-medium transition-colors cursor-pointer" href="#">Colleges</a>
                         <a className="text-gray-600 hover:text-primary font-medium transition-colors cursor-pointer" href="#">Exams</a>
                         <Link
-                            to="/blogs-news"
+                            to="/"
                             className={`${isBlogsNews ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-600 hover:text-primary font-medium'} py-7 transition-all h-full flex items-center`}
                         >
                             BLOGS/NEWS
-                        </Link>
-                        <Link
-                            to="/"
-                            className={`${isBlog ? 'text-primary font-bold border-b-2 border-primary' : 'text-gray-600 hover:text-primary font-medium'} py-7 transition-all h-full flex items-center`}
-                        >
-                            Blogs
                         </Link>
                     </nav>
                     <div className="flex items-center gap-4">

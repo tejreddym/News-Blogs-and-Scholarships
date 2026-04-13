@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import Blog from './pages/Blog';
 import BlogsNews from './pages/BlogsNews';
 import NewsDetail from './pages/NewsDetail';
 import BlogsNewsArticleDetail from './pages/BlogsNewsArticleDetail';
@@ -16,9 +15,8 @@ const App: React.FC = () => {
                 <Navbar />
                 <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <Routes>
-                        <Route path="/" element={<Blog />} />
+                        <Route path="/" element={<BlogsNews />} />
                         <Route path="/blog/:slug" element={<BlogsNewsArticleDetail />} />
-                        <Route path="/blogs-news" element={<BlogsNews />} />
                         <Route path="/news/:slug" element={<NewsDetail />} />
                     </Routes>
                 </main>
