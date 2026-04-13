@@ -4,8 +4,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Blog from './pages/Blog';
-import Scholarships from './pages/Scholarships';
-import ScholarshipDetail from './pages/ScholarshipDetail';
 import BlogsNews from './pages/BlogsNews';
 import NewsDetail from './pages/NewsDetail';
 import BlogsNewsArticleDetail from './pages/BlogsNewsArticleDetail';
@@ -20,8 +18,6 @@ const App: React.FC = () => {
                     <Routes>
                         <Route path="/" element={<Blog />} />
                         <Route path="/blog/:slug" element={<BlogsNewsArticleDetail />} />
-                        <Route path="/scholarships" element={<Scholarships />} />
-                        <Route path="/scholarships/:slug" element={<ScholarshipDetail />} />
                         <Route path="/blogs-news" element={<BlogsNews />} />
                         <Route path="/news/:slug" element={<NewsDetail />} />
                     </Routes>

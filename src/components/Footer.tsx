@@ -8,7 +8,7 @@ const Footer: React.FC = () => (
                 <Link to="/" className="w-8 h-8 rounded bg-primary flex items-center justify-center text-white font-bold text-sm">CM</Link>
                 <span className="font-display font-bold text-xl tracking-tight text-gray-900">College Mentor</span>
             </div>
-            <p className="text-gray-500 text-sm">© 2024 College Mentor. All rights reserved.</p>
+            <p className="text-gray-500 text-sm">© 2026 College Mentor. All rights reserved.</p>
         </div>
     </footer>
 );
