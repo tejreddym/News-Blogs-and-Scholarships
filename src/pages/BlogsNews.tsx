@@ -186,7 +186,7 @@ const BlogsNews: React.FC = () => {
 
                 {/* Mobile Responsive Search & Filter Bar */}
                 <div className="mb-10 w-full bg-[#FCFCFD] p-4 sm:p-5 rounded-2xl shadow-sm border border-[#EAECF0]">
-                    {/* Top Row: Search Input and Dropdowns */}
+                    {/* Top Row: Search Input */}
                     <div className="flex flex-col md:flex-row gap-3 mb-4">
                         <div className="relative flex-1">
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -200,61 +200,6 @@ const BlogsNews: React.FC = () => {
                                 className="w-full pl-11 pr-4 py-3.5 bg-[#F2F4F7] border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:bg-[#FCFCFD] transition-all text-gray-800 placeholder-gray-400 font-medium text-sm"
                             />
                         </div>
-                        <div className="flex gap-3 md:w-auto w-full">
-                            <div className="relative w-1/2 md:w-36 flex-shrink-0">
-                                <select className="w-full appearance-none bg-[#F2F4F7] border-transparent text-sm rounded-xl pl-4 pr-10 py-3.5 text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:bg-[#FCFCFD] transition-all cursor-pointer">
-                                    <option value="" disabled selected>Categories</option>
-                                    <option value="Colleges">Colleges</option>
-                                    <option value="Exams">Exams</option>
-                                    <option value="Schools">Schools</option>
-                                    <option value="Scholarships">Scholarships</option>
-                                    <option value="Courses">Courses</option>
-                                    <option value="Careers">Careers</option>
-                                    <option value="Startup and Innovation">Startup and Innovation</option>
-                                    <option value="Study Abroad">Study Abroad</option>
-                                    <option value="Featured News">Featured News/Articles for Partner Universities</option>
-                                    <option value="Policies">Policies</option>
-                                    <option value="Others">Others</option>
-                                </select>
-                                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                    <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                                </div>
-                            </div>
-                            <div className="relative w-1/2 md:w-36 flex-shrink-0">
-                                <select className="w-full appearance-none bg-[#F2F4F7] border-transparent text-sm rounded-xl pl-4 pr-10 py-3.5 text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:bg-[#FCFCFD] transition-all cursor-pointer">
-                                    <option value="" disabled selected>Streams</option>
-                                    <option value="engineering">Engineering</option>
-                                    <option value="medical">Medical</option>
-                                    <option value="management">Management</option>
-                                </select>
-                                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                    <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Bottom Row: Filter Chips */}
-                    <div className="flex flex-wrap items-center gap-2">
-                        {/* Active Selection Example */}
-                        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#EEF2FF] border border-[#E0E7FF] rounded-lg text-xs font-bold text-[#4338CA]">
-                            Career Guidance
-                            <button className="hover:bg-[#E0E7FF] rounded-full p-0.5 transition-colors focus:outline-none" aria-label="Remove Career Guidance filter">
-                                <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                            </button>
-                        </span>
-                        
-                        {/* Inactive Selection Examples */}
-                        {['Exam Prep', 'Engineering', 'Study Tips'].map((chip, idx) => (
-                            <span key={idx} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#F2F4F7] border border-[#EAECF0] rounded-lg text-xs font-bold text-gray-600">
-                                {chip}
-                                <button className="hover:bg-gray-200 rounded-full p-0.5 transition-colors focus:outline-none" aria-label={`Remove ${chip} filter`}>
-                                    <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                                </button>
-                            </span>
-                        ))}
-                        
-                        <button className="text-xs font-black text-brand-blue hover:text-accent-blue ml-2 transition-colors">Clear all</button>
                     </div>
                 </div>
 
@@ -359,7 +304,7 @@ const BlogsNews: React.FC = () => {
                                     <br/>
 
                                     
-                                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                         {[
                                             {
                                                 tag: 'NATIONAL NEWS',
@@ -399,7 +344,7 @@ const BlogsNews: React.FC = () => {
                                             }
                                         ].map((card, i) => (
                                             <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                                <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                                <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                     <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                     <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                         {card.tag}
@@ -411,7 +356,7 @@ const BlogsNews: React.FC = () => {
                                                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                         <span>{card.date}</span>
                                                     </div>
-                                                    <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                    <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                         {card.title}
                                                     </h4>
                                                     <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -535,7 +480,7 @@ const BlogsNews: React.FC = () => {
                                     <br/>
 
                                     
-                                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                         {[
                                             {
                                                 tag: 'HEALTH',
@@ -575,7 +520,7 @@ const BlogsNews: React.FC = () => {
                                             }
                                         ].map((card, i) => (
                                             <Link to="/blog/jee-mental-health" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                                <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                                <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                     <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                     <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                         {card.tag}
@@ -587,7 +532,7 @@ const BlogsNews: React.FC = () => {
                                                         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                         <span>{card.date}</span>
                                                     </div>
-                                                    <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                    <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                         {card.title}
                                                     </h4>
                                                     <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -679,7 +624,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         { tag: 'BOARD EXAMS', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhkCUoVaJu-h4WCJLUxjwG413Vzp_LRDgyRBAIrLt8t8cU6V6I7QCt9Y9l2pgt1v5R6oYKitMLgv7vcEDOfb7pTTfzeACEUEjVMeKzb9F4vbl7ZVJrOVtqyndCIXmyg7qkxN66ZWkEmX_67lWokGc8RYlB1dMGk1u-JMJ0tAyuUd4xYbiJn513fhOkuqoDMqgwBu2261Ag3bhIGdq0qR8D-JnjDjCo8E8iIU5iZqFJrRxM7lD6jZnrhDEluo47eiTegwDTEo7kPiMB', title: 'CBSE Class 12 Board Exam 2024: Timetable Released, Key Dates', excerpt: 'The Central Board of Secondary Education has officially announced the timetable for the 2024 class 12 examinations.', author: 'Exam Desk', date: 'Nov 1, 2023', readTime: '5 min read' },
                                         { tag: 'COMPETITIVE', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVnxGmnKEhqcUKnKw7zIB7Rmuph33GXeXfTSwR6_5wnOwooH5ad0jM3Tq-8zF4PhUoyPoVTBGaGGdJGlB_nN7ggjz_i9AjI9evtpWPwuGyIXVGxRenXS6QPaXSDgr6IXeIsj4qTlNmQTl3AtBETZjzaFtj4H-F2Mi0VwcO8oBF2XhuekPuATdLD_3N471vt1wedLcThg5WojMOfPBRFN6gwM3pXm1zim9c_MQrckZmDfPZKJBxzJWgC4h0ibmFiZx83pko99TclTTP', title: 'JEE Main 2024: Session 1 Registration Begins', excerpt: 'Check the new eligibility criteria, syllabus adjustments, and step-by-step application guide for joining IITs.', author: 'Prep Guru', date: 'Nov 2, 2023', readTime: '8 min read' },
@@ -687,7 +632,7 @@ const BlogsNews: React.FC = () => {
                                         { tag: 'COMPETITIVE', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVnxGmnKEhqcUKnKw7zIB7Rmuph33GXeXfTSwR6_5wnOwooH5ad0jM3Tq-8zF4PhUoyPoVTBGaGGdJGlB_nN7ggjz_i9AjI9evtpWPwuGyIXVGxRenXS6QPaXSDgr6IXeIsj4qTlNmQTl3AtBETZjzaFtj4H-F2Mi0VwcO8oBF2XhuekPuATdLD_3N471vt1wedLcThg5WojMOfPBRFN6gwM3pXm1zim9c_MQrckZmDfPZKJBxzJWgC4h0ibmFiZx83pko99TclTTP', title: 'JEE Main 2024: Session 1 Registration Begins', excerpt: 'Check the new eligibility criteria, syllabus adjustments, and step-by-step application guide for joining IITs.', author: 'Prep Guru', date: 'Nov 2, 2023', readTime: '8 min read' },
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -699,7 +644,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -755,7 +700,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         {
                                             tag: 'CAMPUS LIFE',
@@ -795,7 +740,7 @@ const BlogsNews: React.FC = () => {
                                         }
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -807,7 +752,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -843,7 +788,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         {
                                             tag: 'K12 EDUCATION',
@@ -883,7 +828,7 @@ const BlogsNews: React.FC = () => {
                                         }
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -895,7 +840,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -930,7 +875,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         { tag: 'GLOBAL', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCkukfnEQdIFzWXXO47GNsqWcObHkqOkQVnIR61FJHCWHV4SAxJjAeRhar11LI9GBYgZNM4empQ7f-IKoQL5dUYWNM-Nwurcaz_3933OfZSqGe3MtWv6aOzbCrynTnWWRmawcdTQQisH3bZsUjU77zA-8B8T5y9HP1oWT11sdgQ_ohfOWWO02CJC13h3eZKHbneZ01NU7UG9T_-gTbzf5a3N-_NWD67nDDlD_eQEMFz5LzpSgRl2zc9C6hQfljDwN9wgUvbu22xmFal', title: 'PM Scholarship Scheme 2024: Applications Open', excerpt: 'Merit-based financial aid program for students seeking high quality education abroad.', author: 'Scholarship Desk', date: 'Nov 5, 2023', readTime: '5 min read' },
                                         { tag: 'WOMEN', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGp1tX0owh7m5KJp6sLZ8yCT1yMrSol9dX6MUWDVV_wBUyUCyN-yBtHc6zTFzWi_3p6dQiC2aG8_RC-i4MZIbmbUaZwo4l3pc-DR4ohjWNVCrMW3tU8iKyV9VhZThEBPdBZ9LXQwZxBJAX9pKJ0P_m4qeW1GRWy13t39FiBZs2FQ8baOwOQkizdDgtkGrk6UI98woN8B0vvwWsZnehrOQDA1NBKP28-BUe9DQ57rtmrCXP1EMxGde9RgkZU0BKkc10SnyHWbsl17BG', title: "L'Oréal India For Young Women in Science", excerpt: 'Empowering young female aspirants looking to dive deeply into science fields.', author: 'Foundation Media', date: 'Oct 25, 2023', readTime: '4 min read' },
@@ -938,7 +883,7 @@ const BlogsNews: React.FC = () => {
                                         { tag: 'WOMEN', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGp1tX0owh7m5KJp6sLZ8yCT1yMrSol9dX6MUWDVV_wBUyUCyN-yBtHc6zTFzWi_3p6dQiC2aG8_RC-i4MZIbmbUaZwo4l3pc-DR4ohjWNVCrMW3tU8iKyV9VhZThEBPdBZ9LXQwZxBJAX9pKJ0P_m4qeW1GRWy13t39FiBZs2FQ8baOwOQkizdDgtkGrk6UI98woN8B0vvwWsZnehrOQDA1NBKP28-BUe9DQ57rtmrCXP1EMxGde9RgkZU0BKkc10SnyHWbsl17BG', title: "L'Oréal India For Young Women in Science", excerpt: 'Empowering young female aspirants looking to dive deeply into science fields.', author: 'Foundation Media', date: 'Oct 25, 2023', readTime: '4 min read' },
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -950,7 +895,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -985,7 +930,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         {
                                             tag: 'TECH',
@@ -1025,7 +970,7 @@ const BlogsNews: React.FC = () => {
                                         }
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -1037,7 +982,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -1072,7 +1017,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         { tag: 'GOVERNMENT STAFF', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVnxGmnKEhqcUKnKw7zIB7Rmuph33GXeXfTSwR6_5wnOwooH5ad0jM3Tq-8zF4PhUoyPoVTBGaGGdJGlB_nN7ggjz_i9AjI9evtpWPwuGyIXVGxRenXS6QPaXSDgr6IXeIsj4qTlNmQTl3AtBETZjzaFtj4H-F2Mi0VwcO8oBF2XhuekPuATdLD_3N471vt1wedLcThg5WojMOfPBRFN6gwM3pXm1zim9c_MQrckZmDfPZKJBxzJWgC4h0ibmFiZx83pko99TclTTP', title: 'SSC CGL 2024 Notification Out: 17,727 Vacancies', excerpt: 'Staff Selection Commission announces a significant wave of hiring across multiple central departments.', author: 'Career News', date: 'Nov 3, 2023', readTime: '5 min read' },
                                         { tag: 'RAILWAYS', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhkCUoVaJu-h4WCJLUxjwG413Vzp_LRDgyRBAIrLt8t8cU6V6I7QCt9Y9l2pgt1v5R6oYKitMLgv7vcEDOfb7pTTfzeACEUEjVMeKzb9F4vbl7ZVJrOVtqyndCIXmyg7qkxN66ZWkEmX_67lWokGc8RYlB1dMGk1u-JMJ0tAyuUd4xYbiJn513fhOkuqoDMqgwBu2261Ag3bhIGdq0qR8D-JnjDjCo8E8iIU5iZqFJrRxM7lD6jZnrhDEluo47eiTegwDTEo7kPiMB', title: 'RRB NTPC 2024: Recruitment Board Notifications', excerpt: 'Non-Technical Popular Categories announcements suggest major openings preparing early.', author: 'Jobs Alert', date: 'Oct 30, 2023', readTime: '3 min read' },
@@ -1080,7 +1025,7 @@ const BlogsNews: React.FC = () => {
                                         { tag: 'RAILWAYS', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhkCUoVaJu-h4WCJLUxjwG413Vzp_LRDgyRBAIrLt8t8cU6V6I7QCt9Y9l2pgt1v5R6oYKitMLgv7vcEDOfb7pTTfzeACEUEjVMeKzb9F4vbl7ZVJrOVtqyndCIXmyg7qkxN66ZWkEmX_67lWokGc8RYlB1dMGk1u-JMJ0tAyuUd4xYbiJn513fhOkuqoDMqgwBu2261Ag3bhIGdq0qR8D-JnjDjCo8E8iIU5iZqFJrRxM7lD6jZnrhDEluo47eiTegwDTEo7kPiMB', title: 'RRB NTPC 2024: Recruitment Board Notifications', excerpt: 'Non-Technical Popular Categories announcements suggest major openings preparing early.', author: 'Jobs Alert', date: 'Oct 30, 2023', readTime: '3 min read' },
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -1092,7 +1037,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -1127,7 +1072,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         {
                                             tag: 'ED-TECH STARTUPS',
@@ -1167,7 +1112,7 @@ const BlogsNews: React.FC = () => {
                                         }
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -1179,7 +1124,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -1214,7 +1159,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         { tag: 'UNITED KINGDOM', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGp1tX0owh7m5KJp6sLZ8yCT1yMrSol9dX6MUWDVV_wBUyUCyN-yBtHc6zTFzWi_3p6dQiC2aG8_RC-i4MZIbmbUaZwo4l3pc-DR4ohjWNVCrMW3tU8iKyV9VhZThEBPdBZ9LXQwZxBJAX9pKJ0P_m4qeW1GRWy13t39FiBZs2FQ8baOwOQkizdDgtkGrk6UI98woN8B0vvwWsZnehrOQDA1NBKP28-BUe9DQ57rtmrCXP1EMxGde9RgkZU0BKkc10SnyHWbsl17BG', title: 'UK Post-Study Work Visa Extended: Rules for Indian Students', excerpt: 'Graduates from recognized universities can continue staying finding relevant international work experience.', author: 'Overseas Editor', date: 'Nov 2, 2023', readTime: '5 min read' },
                                         { tag: 'USA', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCkukfnEQdIFzWXXO47GNsqWcObHkqOkQVnIR61FJHCWHV4SAxJjAeRhar11LI9GBYgZNM4empQ7f-IKoQL5dUYWNM-Nwurcaz_3933OfZSqGe3MtWv6aOzbCrynTnWWRmawcdTQQisH3bZsUjU77zA-8B8T5y9HP1oWT11sdgQ_ohfOWWO02CJC13h3eZKHbneZ01NU7UG9T_-gTbzf5a3N-_NWD67nDDlD_eQEMFz5LzpSgRl2zc9C6hQfljDwN9wgUvbu22xmFal', title: 'F-1 Visa Interview Wait Times Drop to Record Low', excerpt: 'Expedited processing brings massive relief to hopeful MS aspirants studying stateside this fall.', author: 'Immigration Expert', date: 'Oct 29, 2023', readTime: '3 min read' },
@@ -1222,7 +1167,7 @@ const BlogsNews: React.FC = () => {
                                         { tag: 'USA', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCkukfnEQdIFzWXXO47GNsqWcObHkqOkQVnIR61FJHCWHV4SAxJjAeRhar11LI9GBYgZNM4empQ7f-IKoQL5dUYWNM-Nwurcaz_3933OfZSqGe3MtWv6aOzbCrynTnWWRmawcdTQQisH3bZsUjU77zA-8B8T5y9HP1oWT11sdgQ_ohfOWWO02CJC13h3eZKHbneZ01NU7UG9T_-gTbzf5a3N-_NWD67nDDlD_eQEMFz5LzpSgRl2zc9C6hQfljDwN9wgUvbu22xmFal', title: 'F-1 Visa Interview Wait Times Drop to Record Low', excerpt: 'Expedited processing brings massive relief to hopeful MS aspirants studying stateside this fall.', author: 'Immigration Expert', date: 'Oct 29, 2023', readTime: '3 min read' },
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -1234,7 +1179,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -1269,7 +1214,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         {
                                             tag: 'PARTNERSHIP',
@@ -1309,7 +1254,7 @@ const BlogsNews: React.FC = () => {
                                         }
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -1321,7 +1266,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -1356,7 +1301,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         { tag: 'REGULATION', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVnxGmnKEhqcUKnKw7zIB7Rmuph33GXeXfTSwR6_5wnOwooH5ad0jM3Tq-8zF4PhUoyPoVTBGaGGdJGlB_nN7ggjz_i9AjI9evtpWPwuGyIXVGxRenXS6QPaXSDgr6IXeIsj4qTlNmQTl3AtBETZjzaFtj4H-F2Mi0VwcO8oBF2XhuekPuATdLD_3N471vt1wedLcThg5WojMOfPBRFN6gwM3pXm1zim9c_MQrckZmDfPZKJBxzJWgC4h0ibmFiZx83pko99TclTTP', title: 'UGC Extends Ph.D. Thesis Submission Deadline', excerpt: 'Addressing backlogs, pushing the regular deadline 6 months deeper into winter session.', author: 'Policy Updates', date: 'Nov 6, 2023', readTime: '5 min read' },
                                         { tag: 'INTERNATIONAL', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhkCUoVaJu-h4WCJLUxjwG413Vzp_LRDgyRBAIrLt8t8cU6V6I7QCt9Y9l2pgt1v5R6oYKitMLgv7vcEDOfb7pTTfzeACEUEjVMeKzb9F4vbl7ZVJrOVtqyndCIXmyg7qkxN66ZWkEmX_67lWokGc8RYlB1dMGk1u-JMJ0tAyuUd4xYbiJn513fhOkuqoDMqgwBu2261Ag3bhIGdq0qR8D-JnjDjCo8E8iIU5iZqFJrRxM7lD6jZnrhDEluo47eiTegwDTEo7kPiMB', title: 'AICTE Approves Guidelines for Joint Degree Programs', excerpt: 'Unprecedented access via global programs with partnered foreign institutes allowing seamless transfers.', author: 'AICTE Monitor', date: 'Oct 20, 2023', readTime: '4 min read' },
@@ -1364,7 +1309,7 @@ const BlogsNews: React.FC = () => {
                                         { tag: 'INTERNATIONAL', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhkCUoVaJu-h4WCJLUxjwG413Vzp_LRDgyRBAIrLt8t8cU6V6I7QCt9Y9l2pgt1v5R6oYKitMLgv7vcEDOfb7pTTfzeACEUEjVMeKzb9F4vbl7ZVJrOVtqyndCIXmyg7qkxN66ZWkEmX_67lWokGc8RYlB1dMGk1u-JMJ0tAyuUd4xYbiJn513fhOkuqoDMqgwBu2261Ag3bhIGdq0qR8D-JnjDjCo8E8iIU5iZqFJrRxM7lD6jZnrhDEluo47eiTegwDTEo7kPiMB', title: 'AICTE Approves Guidelines for Joint Degree Programs', excerpt: 'Unprecedented access via global programs with partnered foreign institutes allowing seamless transfers.', author: 'AICTE Monitor', date: 'Oct 20, 2023', readTime: '4 min read' },
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -1376,7 +1321,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
@@ -1411,7 +1356,7 @@ const BlogsNews: React.FC = () => {
                                     </h2>
                                     
                                 </div>
-                                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
                                         { tag: 'LIFESTYLE', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGp1tX0owh7m5KJp6sLZ8yCT1yMrSol9dX6MUWDVV_wBUyUCyN-yBtHc6zTFzWi_3p6dQiC2aG8_RC-i4MZIbmbUaZwo4l3pc-DR4ohjWNVCrMW3tU8iKyV9VhZThEBPdBZ9LXQwZxBJAX9pKJ0P_m4qeW1GRWy13t39FiBZs2FQ8baOwOQkizdDgtkGrk6UI98woN8B0vvwWsZnehrOQDA1NBKP28-BUe9DQ57rtmrCXP1EMxGde9RgkZU0BKkc10SnyHWbsl17BG', title: 'Student Spotlights: How Gen Z Maintains Discipline', excerpt: 'We explore deep work habits amidst rising distractions for young scholars.', author: 'Community Voice', date: 'Nov 6, 2023', readTime: '5 min read' },
                                         { tag: 'PODCAST', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCkukfnEQdIFzWXXO47GNsqWcObHkqOkQVnIR61FJHCWHV4SAxJjAeRhar11LI9GBYgZNM4empQ7f-IKoQL5dUYWNM-Nwurcaz_3933OfZSqGe3MtWv6aOzbCrynTnWWRmawcdTQQisH3bZsUjU77zA-8B8T5y9HP1oWT11sdgQ_ohfOWWO02CJC13h3eZKHbneZ01NU7UG9T_-gTbzf5a3N-_NWD67nDDlD_eQEMFz5LzpSgRl2zc9C6hQfljDwN9wgUvbu22xmFal', title: 'Alumni Network Show: Episode 5 Released', excerpt: 'Deep conversations linking success trajectories of successful institutional alumni globally.', author: 'Podcast Team', date: 'Oct 20, 2023', readTime: '4 min read' },
@@ -1419,7 +1364,7 @@ const BlogsNews: React.FC = () => {
                                         { tag: 'PODCAST', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCkukfnEQdIFzWXXO47GNsqWcObHkqOkQVnIR61FJHCWHV4SAxJjAeRhar11LI9GBYgZNM4empQ7f-IKoQL5dUYWNM-Nwurcaz_3933OfZSqGe3MtWv6aOzbCrynTnWWRmawcdTQQisH3bZsUjU77zA-8B8T5y9HP1oWT11sdgQ_ohfOWWO02CJC13h3eZKHbneZ01NU7UG9T_-gTbzf5a3N-_NWD67nDDlD_eQEMFz5LzpSgRl2zc9C6hQfljDwN9wgUvbu22xmFal', title: 'Alumni Network Show: Episode 5 Released', excerpt: 'Deep conversations linking success trajectories of successful institutional alumni globally.', author: 'Podcast Team', date: 'Oct 20, 2023', readTime: '4 min read' },
                                     ].map((card, i) => (
                                         <Link to="/news/nep-2024-reforms" key={i} className="bg-[#FCFCFD] rounded-2xl border border-[#EAECF0] overflow-hidden flex flex-col hover:shadow-lg transition-all group">
-                                            <div className="relative h-32 sm:h-56 flex-shrink-0">
+                                            <div className="relative h-48 sm:h-56 flex-shrink-0">
                                                 <img alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={card.img} />
                                                 <span className="absolute top-4 left-4 bg-white/30 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded tracking-wider shadow-sm">
                                                     {card.tag}
@@ -1431,7 +1376,7 @@ const BlogsNews: React.FC = () => {
                                                     <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                                     <span>{card.date}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
+                                                <h4 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight group-hover:text-brand-blue transition-colors line-clamp-2 sm:line-clamp-none">
                                                     {card.title}
                                                 </h4>
                                                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
