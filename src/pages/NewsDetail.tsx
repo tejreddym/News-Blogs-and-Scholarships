@@ -18,7 +18,6 @@ const NEWS_DATA = [
         views: '15.4K',
         content: [
             { type: 'lead', text: 'The National Education Policy 2024 brings sweeping changes to India\'s higher education landscape, promising to reshape how millions of students pursue their academic ambitions.' },
-            { type: 'youtube', url: 'https://www.youtube.com/embed/-otTV4Brj_0' },
             { type: 'heading', text: 'What\'s Changing?' },
             { type: 'para', text: 'The Ministry of Education has unveiled a revised framework that emphasizes flexibility, interdisciplinary learning, and a multidisciplinary approach to undergraduate programs. Students will now have the freedom to choose courses across different streams, enabling a truly holistic education.' },
             { type: 'para', text: 'Under the new framework, universities will be required to offer a minimum of 40% of credits from disciplines outside the students\' primary field of study. This move is designed to break down the traditional silos between arts, science, and commerce.' },
@@ -142,11 +141,6 @@ const NewsDetail: React.FC = () => {
                                 <blockquote key={i} className="border-l-4 border-accent-green pl-6 py-4 bg-green-50 rounded-r-xl">
                                     <p className="text-lg font-semibold text-gray-800 italic">"{block.text}"</p>
                                 </blockquote>
-                            );
-                            if (block.type === 'youtube') return (
-                                <div key={i} className="my-8 h-[400px] md:h-[550px] w-full rounded-2xl overflow-hidden shadow-lg bg-gray-100">
-                                    <iframe width="100%" height="100%" src={block.url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                                </div>
                             );
                             return null;
                         })}
