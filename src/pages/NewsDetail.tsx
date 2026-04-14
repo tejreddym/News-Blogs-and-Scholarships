@@ -1,41 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-// Sample news data (in a real app this would come from an API/data file)
-const NEWS_DATA = [
-    {
-        slug: 'nep-2024-reforms',
-        tag: 'National News',
-        tagColor: 'bg-brand-blue text-white',
-        category: 'All News',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhkCUoVaJu-h4WCJLUxjwG413Vzp_LRDgyRBAIrLt8t8cU6V6I7QCt9Y9l2pgt1v5R6oYKitMLgv7vcEDOfb7pTTfzeACEUEjVMeKzb9F4vbl7ZVJrOVtqyndCIXmyg7qkxN66ZWkEmX_67lWokGc8RYlB1dMGk1u-JMJ0tAyuUd4xYbiJn513fhOkuqoDMqgwBu2261Ag3bhIGdq0qR8D-JnjDjCo8E8iIU5iZqFJrRxM7lD6jZnrhDEluo47eiTegwDTEo7kPiMB',
-        title: 'NEP 2024: Major Reforms in Higher Education Unveiled',
-        subtitle: 'The Ministry of Education has unveiled a revised framework aimed at increasing flexibility and interdisciplinary studies.',
-        date: 'October 25, 2023',
-        readTime: '6 min read',
-        author: 'Dr. Priya Nair',
-        authorRole: 'Education Correspondent',
-        views: '15.4K',
-        content: [
-            { type: 'lead', text: 'The National Education Policy 2024 brings sweeping changes to India\'s higher education landscape, promising to reshape how millions of students pursue their academic ambitions.' },
-            { type: 'heading', text: 'What\'s Changing?' },
-            { type: 'para', text: 'The Ministry of Education has unveiled a revised framework that emphasizes flexibility, interdisciplinary learning, and a multidisciplinary approach to undergraduate programs. Students will now have the freedom to choose courses across different streams, enabling a truly holistic education.' },
-            { type: 'para', text: 'Under the new framework, universities will be required to offer a minimum of 40% of credits from disciplines outside the students\' primary field of study. This move is designed to break down the traditional silos between arts, science, and commerce.' },
-            { type: 'heading', text: 'Key Provisions' },
-            { type: 'bullets', items: ['Four-year undergraduate programs with multiple exit options', 'Academic Bank of Credits (ABC) for credit transfer', 'Internships and research opportunities embedded in curriculum', 'Choice-based credit system across all recognized universities', 'Dual degree programs between Indian and foreign institutions'] },
-            { type: 'para', text: 'The rollout is expected to begin from the 2024–25 academic year, with universities given until 2026 to achieve full compliance. The University Grants Commission (UGC) will oversee the implementation and issue detailed guidelines by December 2023.' },
-            { type: 'heading', text: 'What Students Should Know' },
-            { type: 'para', text: 'Students currently enrolled in three-year programs will continue under their existing curriculum. The new policies will apply to first-year students from the upcoming academic session. Admission criteria, however, are likely to be updated to reflect the multidisciplinary nature of the new framework.' },
-            { type: 'quote', text: 'This is the most significant transformation in Indian higher education in three decades. We are building a system that produces not just graduates, but thinkers.' },
-            { type: 'para', text: 'Officials from the Ministry have assured students that proper counseling and guidance will be made available through colleges and dedicated digital portals to help navigate the new choices available to them.' },
-        ],
-        relatedNews: [
-            { title: 'JEE Main 2024: What Changes to Expect in the New Academic Year', tag: 'Competitive Exams' },
-            { title: 'CBSE Class 12 Board Exam 2024: Timetable Released', tag: 'Board Exams' },
-            { title: 'DU Admission 2024: CSAS Round 3 Allocation List Released', tag: 'Admissions' },
-        ]
-    }
-];
+import { NEWS_DATA } from '../data/newsData';
 
 const NewsDetail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -141,6 +107,50 @@ const NewsDetail: React.FC = () => {
                                 <blockquote key={i} className="border-l-4 border-accent-green pl-6 py-4 bg-green-50 rounded-r-xl">
                                     <p className="text-lg font-semibold text-gray-800 italic">"{block.text}"</p>
                                 </blockquote>
+                            );
+                            if (block.type === 'video') return (
+                                <div key={i} className="my-10 space-y-3">
+                                    <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white" style={{ paddingTop: '56.25%' }}>
+                                        <iframe 
+                                            src={block.url} 
+                                            title="YouTube video player" 
+                                            className="absolute top-0 left-0 w-full h-full"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                            allowFullScreen
+                                        ></iframe>
+                                    </div>
+                                    {block.caption && <p className="text-center text-sm text-gray-500 italic mt-3">{block.caption}</p>}
+                                </div>
+                            );
+                            if (block.type === 'image') return (
+                                <div key={i} className="my-10 space-y-3">
+                                    <div className="rounded-3xl overflow-hidden shadow-lg">
+                                        <img src={block.url} alt={block.caption} className="w-full h-auto" />
+                                    </div>
+                                    {block.caption && <p className="text-center text-sm text-gray-500 italic">{block.caption}</p>}
+                                </div>
+                            );
+                            if (block.type === 'table') return (
+                                <div key={i} className="my-10 overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                                    <table className="w-full text-left border-collapse">
+                                        <thead>
+                                            <tr className="bg-gray-50 border-b border-gray-200">
+                                                {block.headers?.map((h, idx) => (
+                                                    <th key={idx} className="px-6 py-4 text-xs font-black text-gray-500 uppercase tracking-widest">{h}</th>
+                                                ))}
+                                            </tr>
+                                        </thead>
+                                        <tbody className="bg-white divide-y divide-gray-100">
+                                            {block.rows?.map((row, rowIdx) => (
+                                                <tr key={rowIdx} className="hover:bg-gray-50/50 transition-colors">
+                                                    {row.map((cell, cellIdx) => (
+                                                        <td key={cellIdx} className="px-6 py-4 text-sm text-gray-600 font-medium">{cell}</td>
+                                                    ))}
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             );
                             return null;
                         })}

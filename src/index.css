@@ -4,6 +4,18 @@
 
 /* Hide page vertical scrollbar globally while keeping scroll */
 html {
+  scroll-behavior: smooth;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:root {
   scrollbar-width: none;
   /* Firefox */
   -ms-overflow-style: none;

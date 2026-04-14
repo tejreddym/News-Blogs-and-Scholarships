@@ -8,7 +8,42 @@ export const BLOGS_DATA = [
         date: "Aug 24, 2024",
         readTime: "8 min read",
         author: "Sarah Jenkins",
-        description: "Entering the workforce is one of the most significant shifts in a young professional's life. We explore the essential skills, mindset changes, and practical tips to ensure a smooth transition from academics to the professional world."
+        description: "Entering the workforce is one of the most significant shifts in a young professional's life. We explore the essential skills, mindset changes, and practical tips to ensure a smooth transition from academics to the professional world.",
+        content: [
+            { type: 'lead', text: 'The bridge between university life and the corporate world can feel like a vast chasm, but with the right preparation, it becomes a path to success.' },
+            { type: 'heading', text: 'The First 90 Days' },
+            { type: 'para', text: 'Your first three months are critical for setting the tone of your professional reputation. Focus on observing the culture, understanding the unwritten rules, and identifying key stakeholders.' },
+            { 
+                type: 'video', 
+                url: 'https://www.youtube.com/embed/uIApbkbNQQw', 
+                caption: 'Watch: Expert tips on surviving your first month at a new job.' 
+            },
+            { type: 'heading', text: 'Skills to Prioritize' },
+            { type: 'bullets', items: [
+                'Effective Communication: Learning when to email and when to call.',
+                'Time Management: Moving from assignment deadlines to project milestones.',
+                'Professional Networking: Building relationships across departments.',
+                'Financial Literacy: Understanding your payroll and benefits.'
+            ]},
+            { type: 'heading', text: 'Corporate Milestone Roadmap' },
+            {
+                type: 'table',
+                headers: ['Timeline', 'Focus Area', 'Expected Outcome'],
+                rows: [
+                    ['Week 1', 'Orientation', 'Tools setup and team intro'],
+                    ['Month 1', 'Observation', 'Understanding workflow and hierarchy'],
+                    ['Month 3', 'Contribution', 'Handling independent tasks effectively'],
+                    ['Month 6', 'Optimization', 'Suggesting improvements to current processes']
+                ]
+            },
+            { type: 'para', text: 'Remember that everyone was once a "newbie." Don\'t be afraid to ask questions, but ensure you\'ve done your homework first.' },
+            { 
+                type: 'image', 
+                url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200', 
+                caption: 'Collaborative environments are the hallmark of modern corporate culture.' 
+            },
+            { type: 'quote', text: 'Your career is a marathon, not a sprint. The transition phase is just the warm-up.' }
+        ]
     },
     {
         id: 2,

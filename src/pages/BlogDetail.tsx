@@ -39,16 +39,92 @@ const BlogDetail: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                        <p className="text-xl font-medium text-gray-900 border-l-4 border-primary pl-6 py-2 bg-gray-50 italic">"Educational excellence is not just a destination, but a continuous journey of discovery and growth."</p>
-                        <p>{blog.description}</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <h2 className="text-2xl font-bold text-gray-900 pt-4">Key Takeaways</h2>
-                        <ul className="list-disc pl-6 space-y-3">
-                            <li><strong>Continuous Learning:</strong> Stay updated with industry trends and research.</li>
-                            <li><strong>Networking:</strong> Connect with peers and mentors in your academic stream.</li>
-                            <li><strong>Practical Application:</strong> Bridge the gap between theory and real-world scenarios.</li>
-                        </ul>
+                    <div className="space-y-6 text-gray-700 text-[16px] leading-relaxed">
+                        {blog.content ? (
+                            blog.content.map((block: any, i: number) => {
+                                if (block.type === 'lead') return (
+                                    <p key={i} className="text-xl font-medium text-gray-900 border-l-4 border-primary pl-6 py-2 bg-gray-50 rounded-r-xl italic">{block.text}</p>
+                                );
+                                if (block.type === 'heading') return (
+                                    <h2 key={i} className="text-2xl font-bold text-gray-900 pt-4">{block.text}</h2>
+                                );
+                                if (block.type === 'para') return (
+                                    <p key={i}>{block.text}</p>
+                                );
+                                if (block.type === 'bullets') return (
+                                    <ul key={i} className="list-none space-y-3 pl-2">
+                                        {block.items?.map((item: string, j: number) => (
+                                            <li key={j} className="flex items-start gap-3">
+                                                <span className="mt-1.5 w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                );
+                                if (block.type === 'quote') return (
+                                    <blockquote key={i} className="border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-xl">
+                                        <p className="text-lg font-semibold text-gray-800 italic">"{block.text}"</p>
+                                    </blockquote>
+                                );
+                                if (block.type === 'video') return (
+                                    <div key={i} className="my-10 space-y-3">
+                                        <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white" style={{ paddingTop: '56.25%' }}>
+                                            <iframe 
+                                                src={block.url} 
+                                                title="YouTube video player" 
+                                                className="absolute top-0 left-0 w-full h-full"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                allowFullScreen
+                                            ></iframe>
+                                        </div>
+                                        {block.caption && <p className="text-center text-sm text-gray-500 italic mt-3">{block.caption}</p>}
+                                    </div>
+                                );
+                                if (block.type === 'image') return (
+                                    <div key={i} className="my-10 space-y-3">
+                                        <div className="rounded-3xl overflow-hidden shadow-lg">
+                                            <img src={block.url} alt={block.caption} className="w-full h-auto" />
+                                        </div>
+                                        {block.caption && <p className="text-center text-sm text-gray-500 italic">{block.caption}</p>}
+                                    </div>
+                                );
+                                if (block.type === 'table') return (
+                                    <div key={i} className="my-10 overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                                        <table className="w-full text-left border-collapse">
+                                            <thead>
+                                                <tr className="bg-gray-50 border-b border-gray-200">
+                                                    {block.headers?.map((h: string, idx: number) => (
+                                                        <th key={idx} className="px-6 py-4 text-xs font-black text-gray-500 uppercase tracking-widest">{h}</th>
+                                                    ))}
+                                                </tr>
+                                            </thead>
+                                            <tbody className="bg-white divide-y divide-gray-100">
+                                                {block.rows?.map((row: string[], rowIdx: number) => (
+                                                    <tr key={rowIdx} className="hover:bg-gray-50/50 transition-colors">
+                                                        {row.map((cell, cellIdx) => (
+                                                            <td key={cellIdx} className="px-6 py-4 text-sm text-gray-600 font-medium">{cell}</td>
+                                                        ))}
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                );
+                                return null;
+                            })
+                        ) : (
+                            <>
+                                <p className="text-xl font-medium text-gray-900 border-l-4 border-primary pl-6 py-2 bg-gray-50 italic">"Educational excellence is not just a destination, but a continuous journey of discovery and growth."</p>
+                                <p>{blog.description}</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <h2 className="text-2xl font-bold text-gray-900 pt-4">Key Takeaways</h2>
+                                <ul className="list-disc pl-6 space-y-3">
+                                    <li><strong>Continuous Learning:</strong> Stay updated with industry trends and research.</li>
+                                    <li><strong>Networking:</strong> Connect with peers and mentors in your academic stream.</li>
+                                    <li><strong>Practical Application:</strong> Bridge the gap between theory and real-world scenarios.</li>
+                                </ul>
+                            </>
+                        )}
                     </div>
 
                     {/* FAQ Section */}

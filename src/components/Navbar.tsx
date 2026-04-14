@@ -60,17 +60,29 @@ const Navbar: React.FC = () => {
                         {/* Scrollable categories */}
                         <div
                             ref={catScrollRef}
-                            className="flex overflow-x-auto gap-8 text-sm font-medium text-gray-500 whitespace-nowrap scroll-smooth w-full px-10"
+                            className="flex overflow-x-auto gap-8 text-sm font-medium text-gray-500 whitespace-nowrap scroll-smooth w-full px-10 items-center no-scrollbar"
                             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                            <a className="text-primary font-bold flex-shrink-0" href="#">All Categories</a>
-                            <a className="hover:text-primary flex-shrink-0" href="#">Engineering and Architecture</a>
-                            <a className="hover:text-primary flex-shrink-0" href="#">Management and Business Administration</a>
-                            <a className="hover:text-primary flex-shrink-0" href="#">Medicine and Allied Sciences</a>
-                            <a className="hover:text-primary flex-shrink-0" href="#">Law</a>
-                            <a className="hover:text-primary flex-shrink-0" href="#">Animation and Design</a>
-                            <a className="hover:text-primary flex-shrink-0" href="#">Media, Mass Communication and Journalism</a>
-                            <a className="hover:text-primary flex-shrink-0" href="#">Hospitality and Tourism</a>
+                            <button 
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                className="text-primary font-bold flex-shrink-0"
+                            >
+                                All Categories
+                            </button>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-latest-news">Latest News</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-latest-blogs">Latest Blogs</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-visual-stories">Visual Stories</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-exams">Exams</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-colleges">Colleges</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-schools">Schools</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-scholarships">Scholarships</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-courses">Courses</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-careers">Careers</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-startup-and-innovation">Startup & Innovation</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-study-abroad">Study Abroad</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-featured-news-articles-for-partner-universities">Partner Universities</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-policies">Policies</a>
+                            <a className="hover:text-primary transition-colors flex-shrink-0" href="#sec-others">Others</a>
                         </div>
 
                         {/* Right fade + arrow */}

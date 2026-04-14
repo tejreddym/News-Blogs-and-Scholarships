@@ -214,7 +214,7 @@ const BlogsNews: React.FC = () => {
                             {/* 1. LATEST NEWS */}
                                 <section>
                                     <div className="flex items-center justify-between mb-5">
-                                        <h2 className="text-xl font-bold flex items-center gap-2">
+                                        <h2 id="sec-latest-news" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                             <span className="w-1.5 h-6 bg-accent-green rounded-full"></span>
                                             Latest News
                                         </h2>
@@ -286,8 +286,8 @@ const BlogsNews: React.FC = () => {
                                         Trending News
                                     </h3>
                                     <div className="flex flex-col gap-6 flex-1">
-                                        {trendingSlides.slice(0, 4).map((item, idx) => (
-                                            <Link key={idx} to={`/news/${item.title.replace(/\s+/g, '-').toLowerCase()}`} className="flex gap-4 group items-center">
+                                        {trendingSlides.slice(0, 3).map((item, idx) => (
+                                            <Link key={idx} to={`/news/${item.title.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase().replace(/(^-|-$)/g, '')}`} className="flex gap-4 group items-center">
                                                 <div className="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-gray-100 border border-gray-100">
                                                     <img src={item.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={item.title} />
                                                 </div>
@@ -390,7 +390,7 @@ const BlogsNews: React.FC = () => {
                             {/* 2. LATEST BLOGS */}
                                 <section>
                                     <div className="flex items-center justify-between mb-5">
-                                        <h2 className="text-xl font-bold flex items-center gap-2">
+                                        <h2 id="sec-latest-blogs" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                             <span className="w-1.5 h-6 bg-brand-blue rounded-full"></span>
                                             Latest Blogs
                                         </h2>
@@ -567,7 +567,7 @@ const BlogsNews: React.FC = () => {
                             {/* VISUAL STORIES / WEB STORIES */}
                             <section className="mb-12 border-y border-[#EAECF0] py-8 bg-[#F2F4F7]/50 -mx-4 px-4 sm:mx-0 sm:px-0 sm:bg-transparent sm:border-0 sm:py-0">
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-visual-stories" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-pink-500 rounded-full"></span>
                                         Visual Stories
                                     </h2>
@@ -618,11 +618,16 @@ const BlogsNews: React.FC = () => {
 {/* 4. EXAMS */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-exams" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-urgent-red rounded-full"></span>
                                         Exams
                                     </h2>
-                                    
+                                </div>
+                                <div className="mb-6 flex overflow-x-auto gap-3 pb-2 no-scrollbar">
+                                    <span className="bg-brand-blue text-white px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 cursor-pointer shadow-sm">All Exams</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">College Entrance</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Competitive</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Others</span>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
@@ -694,11 +699,17 @@ const BlogsNews: React.FC = () => {
 {/* 3. COLLEGES */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-colleges" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-secondary-green rounded-full"></span>
                                         Colleges
                                     </h2>
-                                    
+                                </div>
+                                <div className="mb-6 flex overflow-x-auto gap-3 pb-2 no-scrollbar">
+                                    <span className="bg-brand-blue text-white px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 cursor-pointer shadow-sm">All Colleges</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Admissions</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Placements</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Rankings</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Others</span>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
@@ -782,7 +793,7 @@ const BlogsNews: React.FC = () => {
                             {/* 5. SCHOOLS */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-schools" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-yellow-400 rounded-full"></span>
                                         Schools
                                     </h2>
@@ -869,7 +880,7 @@ const BlogsNews: React.FC = () => {
                                                        {/* 6. SCHOLARSHIPS */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-scholarships" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-creativity-purple rounded-full"></span>
                                         Scholarships
                                     </h2>
@@ -924,7 +935,7 @@ const BlogsNews: React.FC = () => {
  {/* 7. COURSES */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-courses" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-teal-500 rounded-full"></span>
                                         Courses
                                     </h2>
@@ -1011,11 +1022,16 @@ const BlogsNews: React.FC = () => {
                                                        {/* 8. CAREERS */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-careers" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-motivational-orange rounded-full"></span>
                                         Careers
                                     </h2>
-                                    
+                                </div>
+                                <div className="mb-6 flex overflow-x-auto gap-3 pb-2 no-scrollbar">
+                                    <span className="bg-brand-blue text-white px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 cursor-pointer shadow-sm">All Careers</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Upskilling</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Internship</span>
+                                    <span className="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-bold flex-shrink-0 hover:border-brand-blue hover:text-brand-blue transition-all cursor-pointer">Others</span>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                                     {[
@@ -1066,7 +1082,7 @@ const BlogsNews: React.FC = () => {
  {/* 9. STARTUP AND INNOVATION */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-startup-and-innovation" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-pink-500 rounded-full"></span>
                                         Startup and Innovation
                                     </h2>
@@ -1153,7 +1169,7 @@ const BlogsNews: React.FC = () => {
                                                        {/* 10. STUDY ABROAD */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-study-abroad" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-calm-teal rounded-full"></span>
                                         Study Abroad
                                     </h2>
@@ -1208,7 +1224,7 @@ const BlogsNews: React.FC = () => {
  {/* 11. FEATURED NEWS / ARTICLES FOR PARTNER UNIVERSITIES */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-featured-news-articles-for-partner-universities" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-brand-blue rounded-full"></span>
                                         Featured News/Articles for Partner Universities
                                     </h2>
@@ -1295,7 +1311,7 @@ const BlogsNews: React.FC = () => {
                                                        {/* 12. POLICIES */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-policies" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-red-400 rounded-full"></span>
                                         Policies
                                     </h2>
@@ -1350,7 +1366,7 @@ const BlogsNews: React.FC = () => {
                             {/* 13. OTHERS */}
                             <section>
                                 <div className="flex items-center justify-between mb-5">
-                                    <h2 className="text-xl font-bold flex items-center gap-2">
+                                    <h2 id="sec-others" className="scroll-mt-32 text-xl font-bold flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-gray-400 rounded-full"></span>
                                         Others
                                     </h2>
