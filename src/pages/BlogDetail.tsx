@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { BLOGS_DATA, FAQS } from '../data/blogData';
+import YouTubeVideos from '../components/YouTubeVideos';
 
 const BlogDetail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -147,6 +148,9 @@ const BlogDetail: React.FC = () => {
                             <p className="text-gray-600 text-sm">Experienced mentor helping students navigate their academic and professional journeys.</p>
                         </div>
                     </div>
+
+                    {/* YouTube Videos Section */}
+                    <YouTubeVideos layout="bottom" />
                 </article>
 
                 <aside className="lg:col-span-4 space-y-10">

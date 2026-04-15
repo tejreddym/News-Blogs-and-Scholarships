@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { NEWS_DATA } from '../data/newsData';
+import YouTubeVideos from '../components/YouTubeVideos';
 
 const NewsDetail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -183,6 +184,9 @@ const NewsDetail: React.FC = () => {
                             ))}
                         </div>
                     </div>
+
+                    {/* YouTube Videos Section */}
+                    <YouTubeVideos layout="bottom" />
                 </article>
 
                 {/* ── SIDEBAR ── */}
@@ -232,27 +236,8 @@ const NewsDetail: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Explore By Type */}
-                    <div className="bg-brand-gradient-diag p-1 rounded-3xl overflow-hidden shadow-sm">
-                        <div className="bg-white p-5 rounded-[calc(1.5rem-2px)]">
-                            <h3 className="text-base font-bold mb-4">Explore By Type</h3>
-                            <div className="grid grid-cols-3 gap-2">
-                                {[
-                                    { icon: '📰', label: 'All News', bg: 'bg-blue-50 hover:bg-blue-100' },
-                                    { icon: '📝', label: 'Exams', bg: 'bg-orange-50 hover:bg-orange-100' },
-                                    { icon: '🏛️', label: 'Colleges', bg: 'bg-green-50 hover:bg-green-100' },
-                                    { icon: '📚', label: 'Courses', bg: 'bg-purple-50 hover:bg-purple-100' },
-                                    { icon: '✈️', label: 'Abroad', bg: 'bg-teal-50 hover:bg-teal-100' },
-                                    { icon: '💰', label: 'Scholarship', bg: 'bg-yellow-50 hover:bg-yellow-100' },
-                                ].map((item, i) => (
-                                    <a key={i} href="#" className={`flex flex-col items-center p-3 rounded-xl transition-colors text-center ${item.bg}`}>
-                                        <span className="text-xl mb-1">{item.icon}</span>
-                                        <span className="text-[10px] font-bold text-gray-700 leading-tight">{item.label}</span>
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                    {/* Latest Videos Sidebar */}
+                    <YouTubeVideos layout="sidebar" />
 
                 </aside>
             </div>

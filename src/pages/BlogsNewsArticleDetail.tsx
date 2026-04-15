@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import YouTubeVideos from '../components/YouTubeVideos';
 
 const BLOG_POSTS = [
     {
@@ -184,6 +184,8 @@ const BlogsNewsArticleDetail: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* YouTube Videos Section */}
+                    <YouTubeVideos layout="bottom" />
                 </article>
 
                 {/* ── SIDEBAR ── */}
